@@ -18,7 +18,7 @@ const UpdateUser = () => {
     setUser({...user,[name]:value});
   }
   useEffect(()=>{
-    axios.get(`http://localhost:8000/api/user/${id}`)
+    axios.get(`https://mern-stack-n24y.onrender.com/api/user/${id}`)
   .then((response)=>{
     setUser(response.data)
   })
@@ -28,7 +28,7 @@ console.log(error);
   },[id])
   const submitForm=async(e)=>{
     e.preventDefault();
-    await axios.put(`http://localhost:8000/api/update/user/${id}`,user)
+    await axios.put(`https://mern-stack-n24y.onrender.com/api/update/user/${id}`,user)
     .then((response)=>{
       //console.log("User created successfully")
       toast.success(response.data.message,{position:'top-right'});
